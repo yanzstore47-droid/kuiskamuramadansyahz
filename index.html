@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#8ed8ff">
+  <title>Kuis Buble — Seberapa Kenal Kamu?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bubble-bg" id="bubbleBg"></div>
+
+  <main class="app">
+    <section class="screen active" id="homeScreen">
+      <div class="brand">
+        <div class="logo-bubble">
+          <span>BU</span><span>BLE</span>
+        </div>
+        <h1>Kuis <span>Buble</span></h1>
+        <p>Seberapa kenal kamu sama aku?</p>
+      </div>
+
+      <div class="character" aria-hidden="true">
+        <div class="blob-face">
+          <i class="eye left"></i><i class="eye right"></i>
+          <span class="mouth">⌣</span>
+          <span class="cheek left">●</span><span class="cheek right">●</span>
+        </div>
+        <div class="speech">Siap uji seberapa kenal kamu? 🫧</div>
+      </div>
+
+      <div class="card intro-card">
+        <div class="card-tape"></div>
+        <h2>✨ Tantangan dimulai!</h2>
+        <p>Jawab 10 pertanyaan tentang aku. Jangan curang ya 😆</p>
+        <ul>
+          <li>🫧 10 pertanyaan pilihan ganda</li>
+          <li>💙 Setiap jawaban punya nilai</li>
+          <li>🏆 Dapatkan hasil akhir + gelar</li>
+        </ul>
+      </div>
+
+      <button class="primary-btn" id="startBtn">Mulai Kuis <span>➜</span></button>
+    </section>
+
+    <section class="screen" id="nameScreen">
+      <button class="back-btn" data-back="homeScreen">‹</button>
+      <div class="top-logo">Kuis <b>Buble</b></div>
+
+      <div class="card form-card">
+        <div class="mini-bubble">🫧</div>
+        <h2>Siapa namamu?</h2>
+        <p>Tulis nama kamu sebelum mulai.</p>
+        <input id="nameInput" type="text" maxlength="20" placeholder="Nama kamu..." autocomplete="off">
+        <small id="nameError"></small>
+        <button class="primary-btn" id="nameNext">Lanjut <span>➜</span></button>
+      </div>
+    </section>
+
+    <section class="screen" id="quizScreen">
+      <div class="quiz-header">
+        <div class="top-logo">Kuis <b>Buble</b></div>
+        <div class="progress-wrap">
+          <span id="progressText">1 / 10</span>
+          <div class="progress"><div id="progressBar"></div></div>
+        </div>
+      </div>
+
+      <div class="question-art" id="questionArt">🫧</div>
+      <div class="card question-card">
+        <div class="question-label">Pertanyaan <b id="questionNumber">1</b></div>
+        <h2 id="questionText"></h2>
+        <div class="answers" id="answers"></div>
+      </div>
+
+      <p class="hint">Pilih satu jawaban yang paling kamu yakin ✨</p>
+    </section>
+
+    <section class="screen" id="resultScreen">
+      <div class="result-bubbles">🫧 🫧 🫧</div>
+      <div class="top-logo">Kuis <b>Buble</b></div>
+      <div class="card result-card">
+        <div class="trophy">🏆</div>
+        <p class="result-small">Hasil kuis <span id="resultName"></span></p>
+        <div class="score"><span id="scoreValue">0</span><small>/100</small></div>
+        <h2 id="resultTitle"></h2>
+        <p id="resultMessage"></p>
+        <div class="result-bar"><div id="resultBar"></div></div>
+        <button class="primary-btn" id="shareBtn">Bagikan Hasil <span>↗</span></button>
+        <button class="secondary-btn" id="restartBtn">Ulangi Kuis</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">Hasil berhasil disalin! 🫧</div>
+  <script src="script.js"></script>
+</body>
+</html>
